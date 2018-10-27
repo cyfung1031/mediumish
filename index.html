@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Blog
+pagination: 
+  enabled: true
 ---
-
-{% if page.url == "/" %}
+{% if paginator.page == 1 %}
 
 <!-- Featured
 ================================================== -->
