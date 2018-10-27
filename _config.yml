@@ -29,11 +29,11 @@ authors:
     pinterest: pinterest
     instagram: cy1031
 
-gems: [jekyll-paginate-v2]
+#gems: [jekyll-paginate-v2]
 
 # Plugins
 plugins: 
-#  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-archives
 #  - jekyll-seo-tag
   - jekyll-sitemap
@@ -48,8 +48,8 @@ jekyll-archives:
     category: '/category/:name/'
     
 # Pagination 
-#paginate: 6
-#paginate_path: /page-:num/
+paginate: 6
+paginate_path: /page-:num/
     
 # Other
 markdown: kramdown
@@ -57,22 +57,34 @@ highlighter: rouge
 
 
 
-plugins_dir:
-  - jekyll-paginate-v2
-exclude:
-  - Gemfile
-  - Gemfile.lock
+#plugins_dir:
+#  - jekyll-paginate-v2
+#exclude:
+#  - Gemfile
+#  - Gemfile.lock
 
-# Produces a cleaner folder structure when using categories
-permalink: /:year/:month/:title.html
+## Produces a cleaner folder structure when using categories
+#permalink: /:year/:month/:title.html
 
-# Pagination Settings
-pagination:
-  enabled: true
-  per_page: 6
-  offset: 2
-  permalink: '/page/:num/'
-  title: ':title - page :num of :max'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+## Pagination Settings
+#pagination:
+#  enabled: true
+#  per_page: 6
+#  offset: 2
+#  permalink: '/page/:num/'
+#  title: ':title - page :num of :max'
+#  limit: 0
+#  sort_field: 'date'
+#  sort_reverse: true
+
+collections:
+  category:
+    output: true
+    
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category_page"

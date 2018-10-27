@@ -1,4 +1,5 @@
 {% assign locale = site.data.text[site.locale] %}
+{% assign permalink = site.paginate_path %}
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
@@ -11,9 +12,9 @@
     {% if page == paginator.page %}
       <span class="ml-1 mr-1">{{ page }}</span>
     {% else %}
-      {% assign path_page = site.pagination.permalink | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page %}
+      {% assign path_page = permalink | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page %}
       {% if page == 1 %}
-        {% assign path_page1 = site.pagination.permalink | replace: '//', '/' | replace: ':num', 1 %}
+        {% assign path_page1 = permalink | replace: '//', '/' | replace: ':num', 1 %}
         {% assign path_page = path_page | replace: path_page1, '/' %}
       {% endif %}
       <a  class="ml-1 mr-1" href="{{ path_page }}">{{ page }}</a>
