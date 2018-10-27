@@ -602,6 +602,7 @@ License: https://www.wowthemes.net/freebies-license/
     }
 }
  .jumbotron.fortags a {
+     display:inline-block;
      padding: 5px 10px 7px;
      background: #222;
      border-radius: 30px;
