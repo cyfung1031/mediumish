@@ -1,6 +1,7 @@
 ---
+title: About
 layout: page
-title: Sobre
+permalink: /about/
 comments: false
 ---
 
