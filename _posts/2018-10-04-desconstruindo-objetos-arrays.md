@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Desestruturação - Desconstruindo objetos e arrays (Destructuring)"
-author: rafael
+author: chester.fung
 categories: [javascript, ES6+]
 image: assets/images/2018/10/04/01.png
 featured: true

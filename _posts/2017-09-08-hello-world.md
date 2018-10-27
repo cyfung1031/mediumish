@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Olá, mundo!"
-author: rafael
+author: chester.fung
 categories: [carreira, vida]
 image: assets/images/2017/09/08/01.jpg
 featured: false

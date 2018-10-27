@@ -1,9 +1,10 @@
+{% assign locale = site.data.text[site.locale] %}
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a  class="ml-1 mr-1" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Anterior</a>
+    <a  class="ml-1 mr-1" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; {{ locale.previous }}</a>
   {% else %}
-    <span>&laquo; Anterior</span>
+    <span>&laquo; {{ locale.previous }}</span>
   {% endif %}
 
   {% for page in (1..paginator.total_pages) %}
@@ -17,9 +18,9 @@
   {% endfor %}
 
   {% if paginator.next_page %}
-    <a  class="ml-1 mr-1" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Próximo &raquo;</a>
+    <a  class="ml-1 mr-1" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ locale.next }} &raquo;</a>
   {% else %}
-    <span>Próximo &raquo;</span>
+    <span>{{ locale.next }} &raquo;</span>
   {% endif %}
 </div>
 {% endif %}

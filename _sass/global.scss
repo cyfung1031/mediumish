@@ -1,0 +1,156 @@
+
+.site-nav {
+  display: none;
+  margin-bottom: 1em;
+  text-align: center;
+
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0.25em 0.75em;
+    list-style: none;
+    color: $nav-color;
+    background-color: $nav-background-color;
+    border-radius: 0 0 (2 * $border-radius) (2 * $border-radius);
+
+    @include breakpoint($medium) {
+      display: inline-block;
+    }
+  }
+
+  li {
+    display: inline-block;
+    font-size: 0.75em;
+  }
+
+  a {
+    display: block;
+    padding: 0.5em 0.75em;
+    color: $nav-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid $nav-background-color;
+    border-radius: $border-radius;
+
+    &:hover {
+      border-color: $nav-color;
+    }
+  }
+
+  @include breakpoint($medium) {
+    display: block;
+  }
+
+  &.js-menu-is-open {
+    display: block;
+    -webkit-animation-name: initial;
+    animation-name: initial;
+  }
+}
+
+
+.search-input {
+    margin-bottom: 2em;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 0.9em;
+    border: 2px solid #ccc;
+    border-radius: .25rem;
+}
+
+#menu-toggle {
+  display: block;
+  margin: 0;
+  padding: 0.25em 0.75em 0.5em;
+  color: #fff;
+  background-color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center; }
+  @media (min-width: 48em) {
+    #menu-toggle {
+      display: none; } }
+
+.site-nav {
+  display: none;
+  margin-bottom: 1em;
+  text-align: center; }
+  .site-nav ul {
+    display: block;
+    margin: 0;
+    padding: 0.25em 0.75em;
+    list-style: none;
+    color: #fff;
+    background-color: #000;
+    border-radius: 0 0 0.5rem 0.5rem; }
+    @media (min-width: 48em) {
+      .site-nav ul {
+        display: inline-block; } }
+  .site-nav li {
+    display: inline-block;
+    font-size: 0.75em; }
+  .site-nav a {
+    display: block;
+    padding: 0.5em 0.75em;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 0.25rem; }
+    .site-nav a:hover {
+      border-color: #fff; }
+  @media (min-width: 48em) {
+    .site-nav {
+      display: block; } }
+  .site-nav.js-menu-is-open {
+    display: block;
+    -webkit-animation-name: initial;
+    animation-name: initial; }
+
+.drop {
+    -webkit-animation-name: drop;
+    animation-name: drop;
+}
+
+
+.animated {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+a.f-tag{
+    display: inline-block;
+    padding: 5px 10px 7px;
+    background: #222;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: lowercase;
+    font-size: 0.8rem;
+}
+
+.label {
+  padding: 0px 10px;
+  display: inline-block;
+  line-height: 20px;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(0,0,0,0.8);
+  border: 2px solid rgba(0,0,0,0.5);
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &:focus,
+  &:hover {
+    color: $bg-color;
+    background-color: $primary;
+    border: 2px solid $primary;
+  }
+}
+
+
+

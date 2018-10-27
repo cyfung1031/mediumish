@@ -1,0 +1,11 @@
+---
+layout: page
+---
+{% assign locale = site.data.text[site.locale] %}
+{{ content }}
+
+<form onsubmit="return false;">
+  <input type="input" id="search" class="search-input" placeholder="{{ locale.search_placeholder_text | default: 'Enter your search term...' }}" autofocus>
+</form>
+
+<div id="results"></div>

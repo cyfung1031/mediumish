@@ -1,0 +1,129 @@
+<aside class="sidebar {% if page.push_sidebar_down %}push{% endif %}">
+
+    
+    
+    <!-- Author Box -->		
+
+    {% if page.author %}		
+	<div class="author">
+		<p>
+			<a href="{{ site.baseurl }}/about/">
+            
+				<img src="{{ site.baseurl }}{{ author.author_image }}" alt="author" class="author">
+            
+                <!--
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+                -->
+			</a>
+		</p> 
+            <a target="_blank" class="link-dark" href="{{ author.web }}" style="font-weight: 700;">{{ author.display_name }}</a><!--<a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
+            -->
+            <div><span class="author-description" style="    font-weight: 300; font-variant: petite-caps;">{{ author.description }}</span></div>	
+        
+		<p>{{ author.description_markdown | markdownify }}</p>
+	</div>		
+    {% endif %}
+
+	<div class="social-icons">
+		{% if author.facebook && author.facebook != "" %}<a target="_blank" href="https://facebook.com/{{ author.facebook }}">{% include social-icon.html icon="Facebook" %}</a>{% endif %} 
+		{% if author.twitter && author.twitter != "" %}<a target="_blank" href="https://twitter.com/{{ author.twitter }}">{% include social-icon.html icon="Twitter" %}</a>{% endif %} 
+		{% if author.pinterest && author.pinterest != "" %}<a target="_blank" href="https://pinterest.com/{{ author.pinterest }}">{% include social-icon.html icon="Pinterest" %}</a>{% endif %} 
+		{% if author.instagram && author.instagram != "" %}<a target="_blank" href="https://www.instagram.com/{{ author.instagram }}">{% include social-icon.html icon="Instagram" %}</a>{% endif %} 
+		<a target="_blank" href="{{ site.baseurl }}/feed.xml">{% include social-icon.html icon="RSS" %}</a>
+	</div>
+
+	{% if site.newsletter_action && site.newsletter_action!=""%}<form action="{{ site.newsletter_action }}" method="post">
+		<h3>Newsletter</h3>
+		<p>Get my latest recipes sent straight to your inbox.</p>
+		<input type="text" name="EMAIL" placeholder="Email address">
+		<input type="submit" value="Sign up">
+	</form>
+	{% endif %}
+    
+    
+                <!-- Blog Categories -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+								{% for cat in site.categories %}
+								{% assign cat_name = cat | first %}
+								{% assign cat_size = cat | last | size %}
+								{% assign cat_slug = cat_name | slugify  %}
+									<a class="bold" href="{{ site.baseurl }}/categories/#{{cat_name}}">
+										{{cat_name}} ({{cat_size}})
+									</a>
+                        </div>
+                        <div class="col-lg-6">
+                        	{% endfor %}
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- end -->
+
+                <!-- Recents post -->
+                <div class="well">
+                	<h4>Recent posts</h4>
+                		<ul class="posts" span="recent">  
+							{% for post in site.posts limit:5 %}  
+							   <li>  
+								   <span>{{ post.date | date_to_string }}</span>
+								   <a href="{{ BASE_PATH }}{{ post.url }}">  
+								   {{ post.title }}</a>  
+							   </li>  
+							{% endfor %}  
+						</ul>
+                </div>
+                <!-- tags widget -->
+                <div class="well">
+                    <h4>Tags</h4>
+                            {% for tag in site.tags %}
+                            {% assign tag_name = tag | first %}
+                            {% assign tag_size = tag | last | size %}
+                            {% assign tag_slug = tag_name | slugify  %}
+                            
+                            <span class="post-card__label"> <a href="{{ site.baseurl }}/tags/#{{tag_name}}" class="label"> {{tag_name}} ({{tag_size}}) </a> </span>
+   
+                            {% endfor %}
+                      
+                </div>
+    
+    
+</aside>
+<!--
+<div class="share">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u={{ page.url | absolute_url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://plus.google.com/share?url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'facebook-google', 'width=550,height=435');return false;">
+        <i class="fab fa-google"></i>
+        </a>
+        </li>
+        
+    </ul>
+    {% if page.comments != false %}
+    <div class="sep">
+    </div>				
+    <ul>
+        <li> 
+        <a  class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    {% endif %}
+</div>
+-->

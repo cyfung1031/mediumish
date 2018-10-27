@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Template literals - Usando variáveis em string no ES6+"
-author: rafael
+author: chester.fung
 categories: [javascript, ES6+]
 image: assets/images/2018/10/03/01.png
 featured: true

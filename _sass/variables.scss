@@ -1,0 +1,29 @@
+// Breakpoints
+$tablet: "(min-width: 450px)";
+$mid-point: "(min-width: 620px)";
+$desktop: "(min-width: 900px)";
+
+$light-grey: #999;
+
+/* Colors */
+$base-color: #000 !default;
+$text-color: #000 !default;
+$accent-color: #34374C !default;
+$nav-color: #fff !default;
+$background-color: #fff !default;
+$nav-background-color: #000 !default;
+$code-background-color: tint($base-color, 95%) !default;
+$border-color: tint($base-color, 80%) !default;
+
+$primary-color: #000 !default;
+$success-color: #62c462 !default;
+$warning-color: #f89406 !default;
+$danger-color: #ee5f5b !default;
+$info-color: #52adc8 !default;
+
+/* Border radius */
+$border-radius: 0.25rem !default;
+
+$primary: #277cea !default;
+
+$bg-color: #fff !default;
